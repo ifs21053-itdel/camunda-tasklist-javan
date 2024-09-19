@@ -1,0 +1,20 @@
+<form>
+    <h5>Semua field di “Mahasiswa Mengajukan Izin”</h5>
+    <div class="formgroup">
+        <p>Apakah pengajuan izin disetujui?</p>
+        <select cam-variable-name="isApproved"
+                cam-variable-type="String" readonly
+                class="form-control">
+            <option value="setuju">Setujui</option>
+            <option value="tolak">Tolak</option>
+        </select>
+    </div>
+
+    <div class="formgroup">
+        <p>Catatan</p>
+        <textarea cam-variable-name="remark"
+                  cam-variable-type="String"
+                  class="form-control"
+                  label="Catatan"></textarea>
+    </div>
+</form>

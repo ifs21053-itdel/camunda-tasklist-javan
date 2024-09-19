@@ -1,0 +1,57 @@
+    <form action="">
+        <h3>Form Pengajuan Izin</h3>
+        <div class="formgroup">Jenis izin :
+            <select cam-variable-name="category"
+                    cam-variable-type="String"
+                    class="form-control"
+                    cam-choices="AVAILABLE_PRODUCT_TYPES">
+                <option>Keperluan Pribadi</option>
+                <option>Sakit</option>
+                <option>Lainnya</option>
+            </select>
+        </div>
+
+        <div class="formgroup">
+            <p>Tanggal Izin</p>
+            <div class="input-group">
+                <input type="text"
+                       cam-variable-name="date"
+                       cam-variable-type="Date"
+                       class="form-control"
+                       uib-datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+                       is-open="dateFieldOpened" />
+                <span class="input-group-btn">
+                    <button type="button"
+                            class="btn btn-default"
+                            ng-click="open($event)">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="formgroup">
+            <p>Deskripsi</p>
+            <textarea cam-variable-name="description"
+                      cam-variable-type="String"
+                      class="form-control"
+                      label="Deskripsi"></textarea>
+        </div>
+
+        <div class="formgroup">
+            <p>Bukti Pendukung</p>
+            <input type="file"
+                   cam-variable-name="evidence"
+                   cam-variable-type="File"
+                   cam-max-filesize="10000000" />
+        </div>
+
+        <script cam-script type="text/form-script">
+            $scope.open = function($event) {
+                $event.preventDefault();
+                $event.stopPropagation();
+                $scope.dateFieldOpened = true;
+            };
+        </script>
+
+    </form>
